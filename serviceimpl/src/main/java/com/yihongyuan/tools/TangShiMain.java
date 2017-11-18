@@ -53,13 +53,8 @@ public class TangShiMain {
                     Element element = item.select("dd").get(0);
                     String name = element.text();
                     tangShi.setExplain(name);
-                }
-                Elements clearfix = doc.select("div.clearfix");
-                for (Element item : poem_explain) {
-                    Element element = item.select("dd").get(0);
-                    String name = element.text();
-                    tangShi.setClearfix(name);
-                    tangShi.setClearfix2(item.select("dd").get(1).text());
+                    tangShi.setClearfix(item.select("dd").get(1).text());
+                     tangShi.setClearfix2(item.select("dd").get(2).text());
                 }
                 tangShis.add(tangShi);
             }catch (Exception e){

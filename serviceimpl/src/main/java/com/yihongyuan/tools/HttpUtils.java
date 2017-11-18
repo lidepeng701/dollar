@@ -23,8 +23,6 @@ import java.util.List;
  */
 public class HttpUtils {
 
-
-
     /**
      * 通过GET方式发起http请求
      */

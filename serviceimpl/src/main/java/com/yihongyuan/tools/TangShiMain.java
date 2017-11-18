@@ -28,11 +28,11 @@ public class TangShiMain {
 
     public static void main(String[] aa){
         List<TangShi> tangShis = new ArrayList<TangShi>();
-        for(int i =1;i<400;i++) {
+        for(int i =1;i<4;i++) {
             TangShi tangShi = new TangShi();
             try {
                 String str = requestByGetMethod("http://tools.2345.com/tangshi/"+i+".htm");
-                //System.out.println(str);
+                System.out.println(str);
                 Document doc = Jsoup.parse(str);
                 Elements elements = doc.select("div.poem_name");
                 for (Element item : elements) {
@@ -54,7 +54,7 @@ public class TangShiMain {
                     String name = element.text();
                     tangShi.setExplain(name);
                     tangShi.setClearfix(item.select("dd").get(1).text());
-                     tangShi.setClearfix2(item.select("dd").get(2).text());
+                    tangShi.setClearfix2(item.select("dd").get(2).text());
                 }
                 tangShis.add(tangShi);
             }catch (Exception e){
